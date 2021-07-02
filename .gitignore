@@ -32,6 +32,7 @@
 *.app
 
 # hamada
+.DS_Store
 .vscode
 *.svg
 *.pdf
