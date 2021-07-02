@@ -29,5 +29,11 @@ TH1D* convertWaveFormToHist(TString run_name = "Cs_002"){
         hist->Fill(determineWaveHeight(waveforms[i], 0, 400));
         if (i % 1000 == 0 && i != 0){ cout << i << endl; }
     }
+
+    // set range
+    int max_bin_range = 1024;
+    while(hist->GetBinContent(max_bin_range) == 0){ max_bin_range--; }
+    hist->GetXaxis()->SetRange(0, max_bin_range);
+
     return hist;
 }
