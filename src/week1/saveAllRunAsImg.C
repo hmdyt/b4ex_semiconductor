@@ -14,11 +14,6 @@ void saveAllRunAsImg(){
         // 0 padding
         run_num_week1_padded << std::setw(3) << std::setfill('0') << run_num_week1;
         while (checkFileExistence(DATA_PATH_WEEK1 + sources[i] + "_" + (TString) run_num_week1_padded.str() + "_0.dat")){
-            // 0 padding clear
-            run_num_week1_padded.str("");
-            run_num_week1_padded.clear(std::stringstream::goodbit);
-            // 0 padding
-            run_num_week1_padded << std::setw(3) << std::setfill('0') << run_num_week1;
             // set run_name
             run_name = sources[i] + "_" + (TString) run_num_week1_padded.str();
             cout << run_name << endl;
@@ -28,7 +23,12 @@ void saveAllRunAsImg(){
             c->SaveAs("img/week1/plane_hist/" + run_name + ".svg");
             c->SaveAs("img/week1/plane_hist/" + run_name + ".pdf");
             // increment
-            run_num_week1++;
+            run_num_week1 += 1;
+            // 0 padding clear
+            run_num_week1_padded.str("");
+            run_num_week1_padded.clear(std::stringstream::goodbit);
+            // 0 padding
+            run_num_week1_padded << std::setw(3) << std::setfill('0') << run_num_week1;
         }
     }
 
