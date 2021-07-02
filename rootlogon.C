@@ -21,4 +21,5 @@ void rootlogon(){
     loadMacro("src/week1/constructWaveFormsVector.C");
     loadMacro("src/week1/determineWaveHeight.C");
     loadMacro("src/week1/convertWaveFormToHist.C");
+    loadMacro("src/week1/saveAllRunAsImg.C");
 }
