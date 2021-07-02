@@ -17,5 +17,7 @@ void rootlogon(){
     cout << "executed rootlogon" << endl;
 
     // week1
+    loadMacro("src/week1/checkFileExistence.C");
+    loadMacro("src/week1/constructWaveFormsVector.C");
     loadMacro("src/week1/convertWaveFormToHist.C");
 }
