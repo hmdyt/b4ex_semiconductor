@@ -1,0 +1,15 @@
+---------- RUN CONFIGURE ----------
+RUN CONFIG FILE NAME   : Am_006.cnf
+OUTPUT FILE NAME       : Am_006
+SAMPLING RATE          : 1000000.0 (Hz)
+SAMPLING NUMBER        : 1024
+DYNAMIC RANGE          : 5.000 (V)
+TRIGGER THRESHOLD CH1  : 0.200 (V)
+TRIGGER THRESHOLD CH2  : 0.200 (V)
+TRIGGER SOURCE         : 0    [ch1=0,ch2=1,or-trig=2,and-trig=3]
+TRIGGER EDGE (R=0,F=1) : 0
+-----------------------------------
+RUN START : timestamp 1625199384.875953
+SUBRUN0 START : timestamp 1625199384.876230
+SUBRUN0 END   : timestamp 1625199861.115354
+SUBRUN1 START : timestamp 1625199861.115774
