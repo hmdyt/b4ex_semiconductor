@@ -1,0 +1,15 @@
+---------- RUN CONFIGURE ----------
+RUN CONFIG FILE NAME   : Cs_015.cnf
+OUTPUT FILE NAME       : Cs_015
+SAMPLING RATE          : 1000000.0 (Hz)
+SAMPLING NUMBER        : 1024
+DYNAMIC RANGE          : 1 (0=+/-25V,1=+/-2.5V)
+TRIGGER THRESHOLD CH1  : 0.450 (V)
+TRIGGER THRESHOLD CH2  : 0.450 (V)
+TRIGGER SOURCE         : 0    [ch1=0,ch2=1,or-trig=2,and-trig=3]
+TRIGGER EDGE (R=0,F=1) : 0
+-----------------------------------
+RUN START : timestamp 1625218032.643971
+SUBRUN0 START : timestamp 1625218032.646364
+SUBRUN0 END   : timestamp 1625226761.178187
+SUBRUN1 START : timestamp 1625226761.205250
