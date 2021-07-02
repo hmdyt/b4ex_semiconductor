@@ -19,5 +19,6 @@ void rootlogon(){
     // week1
     loadMacro("src/week1/checkFileExistence.C");
     loadMacro("src/week1/constructWaveFormsVector.C");
+    loadMacro("src/week1/determineWaveHeight.C");
     loadMacro("src/week1/convertWaveFormToHist.C");
 }
