@@ -5,8 +5,6 @@ saveAllRunAsImg->convertWaveFormToHist: call many times
 convertWaveFormToHist->checkFileExistence: call many times
 convertWaveFormToHist->constructWaveFormsVector: call a few times
 convertWaveFormToHist->determineWaveHeight: call many times
-
-
 ```
 
 # description
