@@ -1,11 +1,12 @@
 # src/week1
 1週目(2021/07/03~)の解析プログラム
-```jsseq
+```sequence
 saveAllRunAsImg->convertWaveFormToHist: call many times
 convertWaveFormToHist->checkFileExistence: call many times
 convertWaveFormToHist->constructWaveFormsVector: call a few times
 convertWaveFormToHist->determineWaveHeight: call many times
 ```
+<img width="1147" alt="スクリーンショット 2021-07-03 1 11 33" src="https://user-images.githubusercontent.com/46584768/124302163-c6673b00-db9b-11eb-9b4c-d627b8344a55.png">
 
 # description
 ## [checkFileExistence](https://github.com/hmdyt/b4ex_semiconductor/blob/main/src/week1/checkFileExistence.C)  
