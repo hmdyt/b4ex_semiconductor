@@ -3,6 +3,8 @@ void saveAllRunAsImg(){
     const TString DATA_PATH_WEEK1 = "/data/hamada/semiconductor/week1/";
 
     // week1
+    // check existence for XX_001 to max run number of each source
+    // and execute the corresponded function
     int run_num_week1;
     TString run_name;
     ostringstream run_num_week1_padded;
