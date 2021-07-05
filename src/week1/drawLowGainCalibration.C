@@ -1,5 +1,6 @@
-void drawCalibrate(){
+void drawLowGainCalibration(bool is_show_origin = false){
 	// init Am theoretical energy
+	// TODO: determine theore_Am_energy
 	vector<Double_t> theore_Am_energy = {13.9, 22, 59.5};
 
 	// init Cs theoretical enrgy
@@ -11,10 +12,22 @@ void drawCalibrate(){
 	// get Cs mean
 	vector<pair<Double_t, Double_t>> fit_Cs_mean = fitLowCs();
 
+	// construct graph title (temporary)
+	TString title = Form(
+		"%f, %f, %f",
+		theore_Am_energy[0],
+		theore_Am_energy[1],
+		theore_Am_energy[2]
+	);
+
 	// init TGraphErrors
 	// x = measured, y = theoretical
 	TGraphErrors* g1 = new TGraphErrors();
-	g1->SetTitle(";Energy [keV];ADC Value");
+	g1->SetTitle(title + ";Energy [keV];ADC Value");
+
+	// init TH2D for axis
+	TH2D* axis = new TH2D("axis", title + ";Energy [keV]; ADC Value", 0, 0, 70, 0, 0, 2000);
+	axis->SetStats(0);
 
 	// set Am points
 	Double_t x, y, x_error, y_error;
@@ -44,7 +57,14 @@ void drawCalibrate(){
 	g1->Fit(func, "R");
 
 	// draw
-	g1->Draw("AP");
+	if (is_show_origin){
+		axis->Draw("AXIS");
+		g1->Draw("P SAME");
+		g2->Draw("P SAME");
+	} else {
+		g1->Draw("AP");
+		g2->Draw("P SAME");
+	}
 	c1->Draw();
-	g2->Draw("Psame");
+
 }
