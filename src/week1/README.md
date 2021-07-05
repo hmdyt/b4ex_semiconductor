@@ -52,11 +52,12 @@ Double_t determineWaveHeight(
 
 ## [convertWaveFormToHist](https://github.com/hmdyt/b4ex_semiconductor/blob/main/src/week1/convertWaveFormToHist.C)  
 ```cpp
-TH1D* convertWaveFormToHist(TString run_name)
+TH1D* convertWaveFormToHist(TString run_name, bool use_cache)
 ```
-あるrunのデータを全て結合したヒストグラムを作る関数。
+あるrunのデータを全て結合したヒストグラムを作る関数。キャッシュとしてrootファイルを生成する。
 - run_nameはrun名を指定 (例えば, Cs_002_1ではなくCs_002のように)
 - Cs_002_0, Cs_002_1, Cs_002_2のように同じrunでもいくつかのファイルが生成されている場合がある。これを自動で検知し, 結合してヒストグラムにするように処理を書いた。
+- use_cacheがtrueかつ, 目的のrootファイルが適切に存在しているなら, キャッシュを用いて返り値を返す
 
 ## [drawWaveForm](https://github.com/hmdyt/b4ex_semiconductor/blob/main/src/week1/drawWaveForm.C)  
 ```cpp
