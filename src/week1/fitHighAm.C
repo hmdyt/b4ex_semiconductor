@@ -41,14 +41,14 @@ vector<pair<Double_t, Double_t>> fitHighAm(){
     vector<pair<Double_t, Double_t>> res;
     res.push_back(
         make_pair(
-            func->GetParameter(0),
-            func->GetParError(0)
+            func->GetParameter(1),
+            func->GetParError(1)
         )
     );
     res.push_back(
         make_pair(
-            func->GetParameter(2),
-            func->GetParError(2)
+            func->GetParameter(7),
+            func->GetParError(7)
         )
     );
     return res;
