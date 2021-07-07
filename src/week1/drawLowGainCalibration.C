@@ -14,7 +14,7 @@ void drawLowGainCalibration(bool is_show_origin = false){
 
 	// construct graph title (temporary)
 	TString title = Form(
-		"%f, %f, %f",
+		"%.1f, %.1f, %.1f",
 		theore_Am_energy[0],
 		theore_Am_energy[1],
 		theore_Am_energy[2]
@@ -45,8 +45,8 @@ void drawLowGainCalibration(bool is_show_origin = false){
 	// set Cs points
 	// init TGraph
 	TGraphErrors* g2 = new TGraphErrors();
-	g2->SetPoint(4, theore_Cs_energy, fit_Cs_mean[0].first);
-	g2->SetPointError(4, 0, fit_Cs_mean[0].second);
+	g2->SetPoint(0, theore_Cs_energy, fit_Cs_mean[0].first);
+	g2->SetPointError(0, 0, fit_Cs_mean[0].second);
 
 	// init canvas
 	TCanvas* c1 = new TCanvas();
@@ -57,6 +57,9 @@ void drawLowGainCalibration(bool is_show_origin = false){
 	g1->Fit(func, "R");
 
 	// draw
+	g1->SetMarkerStyle(21);
+	g2->SetMarkerStyle(21);
+	g2->SetMarkerColor(2);
 	if (is_show_origin){
 		axis->Draw("AXIS");
 		g1->Draw("P SAME");
@@ -66,5 +69,7 @@ void drawLowGainCalibration(bool is_show_origin = false){
 		g2->Draw("P SAME");
 	}
 	c1->Draw();
+	c1->SaveAs("img/week1/low_gain_clb/" + title + ".svg");
+	c1->SaveAs("img/week1/low_gain_clb/" + title + ".pdf");
 
 }
