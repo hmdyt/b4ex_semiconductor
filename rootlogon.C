@@ -24,5 +24,8 @@ void rootlogon(){
     loadMacro("src/week1/saveAllRunAsImg.C");
     loadMacro("src/week1/fitLowAm.C");
     loadMacro("src/week1/fitLowCs.C");
+    loadMacro("src/week1/fitHighAm.C");
+    loadMacro("src/week1/fitHighCs.C");
     loadMacro("src/week1/drawLowGainCalibration.C");
+    loadMacro("src/week1/drawHighGainCalibration.C");
 }
