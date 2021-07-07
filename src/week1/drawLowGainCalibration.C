@@ -1,7 +1,6 @@
-void drawLowGainCalibration(bool is_show_origin = false){
+pair<Double_t, Double_t> drawLowGainCalibration(bool is_show_origin = false){
 	// init Am theoretical energy
-	// TODO: determine theore_Am_energy
-	vector<Double_t> theore_Am_energy = {13.9, 22, 59.5};
+	vector<Double_t> theore_Am_energy = {13.9, 26, 59.5};
 
 	// init Cs theoretical enrgy
 	Double_t theore_Cs_energy = 32.9;
@@ -43,10 +42,8 @@ void drawLowGainCalibration(bool is_show_origin = false){
 	}
 
 	// set Cs points
-	// init TGraph
-	TGraphErrors* g2 = new TGraphErrors();
-	g2->SetPoint(0, theore_Cs_energy, fit_Cs_mean[0].first);
-	g2->SetPointError(0, 0, fit_Cs_mean[0].second);
+	g1->SetPoint(3, theore_Cs_energy, fit_Cs_mean[0].first);
+	g1->SetPointError(3, 0, fit_Cs_mean[0].second);
 
 	// init canvas
 	TCanvas* c1 = new TCanvas();
@@ -57,19 +54,19 @@ void drawLowGainCalibration(bool is_show_origin = false){
 	g1->Fit(func, "R");
 
 	// draw
-	g1->SetMarkerStyle(21);
-	g2->SetMarkerStyle(21);
-	g2->SetMarkerColor(2);
 	if (is_show_origin){
 		axis->Draw("AXIS");
 		g1->Draw("P SAME");
-		g2->Draw("P SAME");
 	} else {
 		g1->Draw("AP");
-		g2->Draw("P SAME");
 	}
 	c1->Draw();
-	c1->SaveAs("img/week1/low_gain_clb/" + title + ".svg");
-	c1->SaveAs("img/week1/low_gain_clb/" + title + ".pdf");
+	c1->SaveAs("img/week1/low_gain_clb/final.svg");
+	c1->SaveAs("img/week1/low_gain_clb/final.pdf");
 
+	// return
+	// y = ax + b
+	Double_t a = func->GetParameter(0);
+	Double_t b = func->GetParameter(1);
+	return make_pair(a, b);
 }
