@@ -37,3 +37,6 @@
 *.svg
 *.pdf
 wiki
+
+# tomoe
+*.swp
