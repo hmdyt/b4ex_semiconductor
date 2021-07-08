@@ -1,4 +1,4 @@
-void saveAllRunAsImg(){
+void saveAllPlaneHist(){
     vector<TString> sources = {"Am", "Cs", "Bg"};
     const TString DATA_PATH_WEEK1 = "/data/hamada/semiconductor/week1/";
 
@@ -33,5 +33,19 @@ void saveAllRunAsImg(){
             run_num_week1_padded << std::setw(3) << std::setfill('0') << run_num_week1;
         }
     }
+}
 
+void saveCalibratedHist(){
+    TCanvas* c = new TCanvas();
+    vector<TString> run_names_low_gain = {"Am_007", "Cs_006"};
+    for (Int_t i = 0; i < run_names_low_gain.size(); i++){
+        makeLowGainCalibratedHist(run_names_low_gain[i], true)->Draw();
+        c->SaveAs("img/week1/calibrated_hist_low_gain/" + run_names_low_gain[i] + ".svg");
+        c->SaveAs("img/week1/calibrated_hist_low_gain/" + run_names_low_gain[i] + ".pdf");
+    }
+}
+
+void saveAllRunAsImg(){
+    saveAllPlaneHist();
+    saveCalibratedHist();
 }
