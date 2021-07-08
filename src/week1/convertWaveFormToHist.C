@@ -18,7 +18,7 @@ TH1D* convertWaveFormToHist(TString run_name = "Cs_002", bool use_cache = true){
     );
 
     // fetch waveforms
-    vector<vector<Double_t>> waveforms = combineSubRuns();
+    vector<vector<Double_t>> waveforms = combineSubRuns(run_name);
 
     // fill into hist
     cout << "start filling" << endl;
