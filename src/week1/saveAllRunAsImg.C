@@ -1,5 +1,5 @@
 void saveAllPlaneHist(){
-    vector<TString> sources = {"Am", "Cs", "Bg"};
+    vector<TString> sources = {"Am", "Cs", "Bg", "Am_alpha"};
     const TString DATA_PATH_WEEK1 = "/data/hamada/semiconductor/week1/";
 
     // week1
