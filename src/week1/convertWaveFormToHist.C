@@ -1,4 +1,4 @@
-TH1D* convertWaveFormToHist(TString run_name = "Cs_002", bool use_cache = true){
+TH1D* convertWaveFormToHist(TString run_name = "Cs_002", bool use_cache = true, bool is_alpha_ray = false){
     // init const
     const TString DATA_PATH = "/data/hamada/semiconductor/week1/";
 
@@ -14,7 +14,7 @@ TH1D* convertWaveFormToHist(TString run_name = "Cs_002", bool use_cache = true){
         run_name + ";ADC value;Event",
         1024,
         0,
-        2048 * 1.5
+        is_alpha_ray ? 100 : 2048 * 1.5
     );
 
     // fetch waveforms
