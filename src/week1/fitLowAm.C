@@ -35,8 +35,16 @@ vector<pair<Double_t, Double_t>> fitLowAm(){
 	func2->SetParameter(2, 50);
 
 	// execute fitting
-	hist->Fit(func1, "R");
-	hist->Fit(func2, "+R");
+	hist->Fit(func1, "RQ0");
+	hist->Fit(func2, "+RQ0");
+
+	// save as img
+    TCanvas* c = new TCanvas();
+    hist->Draw();
+    func1->Draw("SAME");
+	func2->Draw("SAME");
+    c->SaveAs("img/week1/low_gain_clb/Am_007.svg");
+    c->SaveAs("img/week1/low_gain_clb/Am_007.pdf");
 
 	// return fit parameter
 	vector<pair<Double_t, Double_t>> res;

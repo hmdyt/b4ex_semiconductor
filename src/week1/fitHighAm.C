@@ -33,8 +33,15 @@ vector<pair<Double_t, Double_t>> fitHighAm(){
     func->SetParLimits(7, 1400, 1600);
     func->SetParLimits(8, 0   , 600 );
 
-    // execute fitting
-    hist->Fit(func, "R");
+    // execute fitting without drawing and outputting paras
+    hist->Fit(func, "RQ0");
+
+    // save as img
+    TCanvas* c = new TCanvas();
+    hist->Draw();
+    func->Draw("SAME");
+    c->SaveAs("img/week1/high_gain_clb/Am_009.svg");
+    c->SaveAs("img/week1/high_gain_clb/Am_009.pdf");
 
     // return 
     // res = {{mean, mean_error}, {mean, mean_error}, ...}

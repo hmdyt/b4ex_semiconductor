@@ -16,8 +16,15 @@ vector<pair<Double_t, Double_t>> fitHighCs(){
     // Const Mean Sigma
     func->SetParameters(100, 1800, 300);
 
-    // execute fitting
-    hist->Fit(func, "R");
+    // execute fitting without drawing and outputting paras
+    hist->Fit(func, "RQ0");
+
+    // save as img
+    TCanvas* c = new TCanvas();
+    hist->Draw();
+    func->Draw("SAME");
+    c->SaveAs("img/week1/high_gain_clb/Cs_015.svg");
+    c->SaveAs("img/week1/high_gain_clb/Cs_015.pdf");
 
     // return
     // res = {{mean, mean_error}, {mean, mean_error}, ...}

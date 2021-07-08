@@ -20,7 +20,14 @@ vector<pair<Double_t, Double_t>> fitLowCs(){
 	func->SetParameter(2, 20);
 
 	// execute fitting
-	hist->Fit(func, "R");
+	hist->Fit(func, "RQ0");
+
+	// save as img
+    TCanvas* c = new TCanvas();
+    hist->Draw();
+    func->Draw("SAME");
+    c->SaveAs("img/week1/low_gain_clb/Cs_006.svg");
+    c->SaveAs("img/week1/low_gain_clb/Cs_006.pdf");
 
 	// return
 	Double_t mean = func->GetParameter(1);
