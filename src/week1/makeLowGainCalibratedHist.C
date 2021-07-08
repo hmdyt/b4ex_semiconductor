@@ -3,7 +3,7 @@ TH1D* makeLowGainCalibratedHist(TString run_name = "Am_007", bool use_cache = tr
     Double_t RANGE_MIN = 0;
     Double_t RANGE_MAX = 100;
     Double_t BIN_NUM = 1024;
-    TH1D* hist = new TH1D(run_name + "_calibrated", run_name + "_calibrated", BIN_NUM, RANGE_MIN, RANGE_MAX);
+    TH1D* hist = new TH1D(run_name + "_calibrated", run_name + "_calibrated;Energy [keV];Event", BIN_NUM, RANGE_MIN, RANGE_MAX);
 
     // if the macro find a correct cache, return it
     const TString CACHE_PATH = "/data/hamada/semiconductor/week1/" + run_name + "_calibrated.root";
