@@ -1,6 +1,7 @@
 void drawWaveForm(
     TString run_name = "Cs_002",
     Int_t i_event = 100,
+    Int_t n_sampling = 1024,
     TString DATA_PATH = "/data/hamada/semiconductor/week1/"
 ){
     // fetch waveforms
@@ -14,7 +15,7 @@ void drawWaveForm(
 
     TGraph* g = new TGraph();
     g->SetMarkerSize(8);
-    for (Int_t i = 0; i < 1024; i++){
+    for (Int_t i = 0; i < n_sampling; i++){
         g->SetPoint(i, i, waveforms[i_event][i]);
     }
 
