@@ -1,5 +1,5 @@
-void saveAllPlaneHist(){
-    vector<TString> sources = {"Am", "Cs", "Bg", "Am_alpha"};
+void saveAllPlaneHist(use_cache = false){
+    vector<TString> sources = {"Am", "Cs", "Bg"};
     const TString DATA_PATH_WEEK1 = "/data/hamada/semiconductor/week1/";
 
     // week1
@@ -21,7 +21,7 @@ void saveAllPlaneHist(){
             cout << run_name << endl;
             // save
             TCanvas* c = new TCanvas();
-            convertWaveFormToHist(run_name)->Draw();
+            convertWaveFormToHist(run_name, use_cache)->Draw();
             c->SaveAs("img/week1/plane_hist/" + run_name + ".svg");
             c->SaveAs("img/week1/plane_hist/" + run_name + ".pdf");
             // increment
@@ -39,7 +39,7 @@ void saveCalibratedHist(){
     vector<TString> run_names_low_gain = {"Am_007", "Cs_006"};
     for (Int_t i = 0; i < run_names_low_gain.size(); i++){
         TCanvas* c = new TCanvas();
-        makeLowGainCalibratedHist(run_names_low_gain[i], true)->Draw();
+        makeLowGainCalibratedHist(run_names_low_gain[i], use_cache)->Draw();
         c->SaveAs("img/week1/calibrated_hist_low_gain/" + run_names_low_gain[i] + ".svg");
         c->SaveAs("img/week1/calibrated_hist_low_gain/" + run_names_low_gain[i] + ".pdf");
     }
