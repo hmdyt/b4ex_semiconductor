@@ -44,7 +44,7 @@ void saveCalibratedHist(){
         c->SaveAs("img/week1/calibrated_hist_low_gain/" + run_names_low_gain[i] + ".pdf");
     }
 }
-
+//week2
 void saveAmAlphaHist(){
     vector<TString> run_name_Am_alpha = {"Am_alpha_001", "Am_alpha_002"};
     for (Int_t i = 0; i < run_name_Am_alpha.size(); i++){
