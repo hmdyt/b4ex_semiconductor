@@ -54,8 +54,8 @@ void saveAmAlphaHist(){
         c1->SaveAs("img/week2/" + run_name + "Hist.svg");
         c1->SaveAs("img/week2/" + run_name + "Hist.pdf");
         
-        TCanvas* c2 = new TCanvas();
-        fitAmAlpha(run_name)->Draw();
+        TCanvas* c2 = fitAmAlpha(run_name);
+        c2->Draw();
         c2->SaveAs("img/week2/fit" + run_name + "Hist.svg");
         c2->SaveAs("img/week2/fit" + run_name + "Hist.pdf");
 
