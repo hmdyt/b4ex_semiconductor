@@ -45,7 +45,34 @@ void saveCalibratedHist(){
     }
 }
 
+void saveAmAlphaHist(){
+    vector<TString> run_name_Am_alpha = {"Am_alpha_001", "Am_alpha_002"};
+    for (Int_t i = 0; i < run_name_Am_alpha.size(); i++){
+        TString run_name = run_name_Am_alpha[i];
+        TCanvas* c1 = new TCanvas();
+        convertWaveFormToHist(run_name)->Draw();
+        c1->SaveAs("img/week2/" + run_name + "Hist.svg");
+        c1->SaveAs("img/week2/" + run_name + "Hist.pdf");
+        
+        TCanvas* c2 = new TCanvas();
+        fitAmAlpha(run_name)->Draw();
+        c2->SaveAs("img/week2/fit" + run_name + "Hist.svg");
+        c2->SaveAs("img/week2/fit" + run_name + "Hist.pdf");
+
+        TCanvas* c3 = new TCanvas();
+        standardizedByTimeAm(run_name)->Draw();
+        c3->SaveAs("img/week2/standardizedByTime" + run_name + "Hist.svg");
+        c3->SaveAs("img/week2/standardizedByTime" + run_name + "Hist.pdf");
+
+    }
+    TCanvas* c4 = overWriteHistOfAmAlpha();
+    c4->Draw();
+    c4->SaveAs("img/week2/overWriteHistOfAmAlpha.svg");
+    c4->SaveAs("img/week2/overWriteHistOfAmAlpha.pdf");
+}
+
 void saveAllRunAsImg(){
     saveAllPlaneHist();
     saveCalibratedHist();
+    saveAmAlphaHist();
 }
