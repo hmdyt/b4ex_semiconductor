@@ -1,6 +1,6 @@
 pair<Double_t, Double_t> drawLowGainCalibration(bool is_show_origin = false){
 	// init Am theoretical energy
-	vector<Double_t> theore_Am_energy = {13.9, 26, 59.5};
+	vector<Double_t> theore_Am_energy = {18, 0, 26, 59};
 
 	// init Cs theoretical enrgy
 	Double_t theore_Cs_energy = 32.9;
@@ -31,6 +31,7 @@ pair<Double_t, Double_t> drawLowGainCalibration(bool is_show_origin = false){
 	// set Am points
 	Double_t x, y, x_error, y_error;
 	for (Int_t i = 0; i < theore_Am_energy.size(); i++){
+		if (i == 1){ continue; } // pass unknown peak
 		// prepare points
 		x = theore_Am_energy[i];
 		x_error = 0;
