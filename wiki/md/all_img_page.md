@@ -78,8 +78,8 @@
 ![img/week1/plane_hist/Cs_015.svg](https://github.com/hmdyt/b4ex_semiconductor/blob/main/img/week1/plane_hist/Cs_015.svg)
 ### img/week1/plane_hist/Am_alpha_002.svg
 ![img/week1/plane_hist/Am_alpha_002.svg](https://github.com/hmdyt/b4ex_semiconductor/blob/main/img/week1/plane_hist/Am_alpha_002.svg)
-### img/week1/calibrated_hist_high_gain/A,_009.svg
-![img/week1/calibrated_hist_high_gain/A,_009.svg](https://github.com/hmdyt/b4ex_semiconductor/blob/main/img/week1/calibrated_hist_high_gain/A,_009.svg)
+### img/week1/calibrated_hist_high_gain/Am_009.svg
+![img/week1/calibrated_hist_high_gain/Am_009.svg](https://github.com/hmdyt/b4ex_semiconductor/blob/main/img/week1/calibrated_hist_high_gain/Am_009.svg)
 ### img/week1/calibrated_hist_high_gain/Cs_015.svg
 ![img/week1/calibrated_hist_high_gain/Cs_015.svg](https://github.com/hmdyt/b4ex_semiconductor/blob/main/img/week1/calibrated_hist_high_gain/Cs_015.svg)
 ### img/week2/Am_alpha_001Hist.svg
