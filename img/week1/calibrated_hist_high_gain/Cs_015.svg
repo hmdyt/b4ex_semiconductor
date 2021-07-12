@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="no"?>
 <svg width="567.429" height="384.969" viewBox="0 0 567.429 384.969" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
 <title>
-img/week1/calibrated_hist_low_gain/Cs_006.svg
+img/week1/calibrated_hist_high_gain/Cs_015.svg
 </title>
 <desc>
 Creator: ROOT Version 6.22/09
@@ -108,18 +108,18 @@ CreationDate: Mon Jul 12 17:00:57 2021</desc>
 <g transform="rotate(-90,24.122,70.0516)">
 <text xml:space="preserve" x="24.122" y="70.0516" fill="black" font-size="12.8453" font-family="Helvetica">Event</text>
 </g>
-<text xml:space="preserve" x="209.026" y="18.7347" fill="black" font-size="18.0316" font-family="Helvetica">Cs_006_calibrated</text>
+<text xml:space="preserve" x="209.026" y="18.7347" fill="black" font-size="18.0316" font-family="Helvetica">Cs_015_calibrated</text>
 <rect x="442.705" y="24.9905" width="113.386" height="61.5151" fill="white"/>
 <path d="M442.705,86.5056h 113.386" fill="none" stroke="black"/>
 <path d="M556.091,86.5056v -61.5151" fill="none" stroke="black"/>
 <path d="M556.091,24.9905h -113.386" fill="none" stroke="black"/>
 <path d="M442.705,24.9905v 61.5151" fill="none" stroke="black"/>
-<text xml:space="preserve" x="447.69" y="36.6549" fill="black" font-size="12.5522" font-family="Helvetica">Cs_006_calibrated</text>
+<text xml:space="preserve" x="447.69" y="36.6549" fill="black" font-size="12.5522" font-family="Helvetica">Cs_015_calibrated</text>
 <path d="M442.705,40.3693h 113.386" fill="none" stroke="black"/>
-<text xml:space="preserve" x="447.69" y="52.946" fill="black" font-size="12.7186" font-family="Helvetica">Entries </text>
-<text xml:space="preserve" x="512.854" y="52.946" fill="black" font-size="12.7186" font-family="Helvetica"> 10524</text>
-<text xml:space="preserve" x="447.69" y="67.6079" fill="black" font-size="12.7186" font-family="Helvetica">Mean  </text>
-<text xml:space="preserve" x="523.443" y="67.6079" fill="black" font-size="12.7186" font-family="Helvetica">      0</text>
-<text xml:space="preserve" x="447.69" y="83.0844" fill="black" font-size="12.7186" font-family="Helvetica">Std Dev   </text>
-<text xml:space="preserve" x="523.443" y="83.0844" fill="black" font-size="12.7186" font-family="Helvetica">      0</text>
-<text xml:space="preserve" x="209.026" y="18.7347" fill="black" font-size="18.0316" font-family="Helvetica">Cs_006_calibrated</text></svg>
+<text xml:space="preserve" x="447.69" y="52.946" fill="black" font-size="12.3904" font-family="Helvetica">Entries </text>
+<text xml:space="preserve" x="506.338" y="52.946" fill="black" font-size="12.3904" font-family="Helvetica"> 100820</text>
+<text xml:space="preserve" x="447.69" y="67.6079" fill="black" font-size="12.3904" font-family="Helvetica">Mean  </text>
+<text xml:space="preserve" x="523.443" y="67.6079" fill="black" font-size="12.3904" font-family="Helvetica">      0</text>
+<text xml:space="preserve" x="447.69" y="83.0844" fill="black" font-size="12.3904" font-family="Helvetica">Std Dev   </text>
+<text xml:space="preserve" x="523.443" y="83.0844" fill="black" font-size="12.3904" font-family="Helvetica">      0</text>
+<text xml:space="preserve" x="209.026" y="18.7347" fill="black" font-size="18.0316" font-family="Helvetica">Cs_015_calibrated</text></svg>
