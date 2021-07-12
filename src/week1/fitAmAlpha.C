@@ -1,4 +1,4 @@
-TH1D* fitAmAlpha(TString run_name = "Am_alpha_001"){
+TCanvas* fitAmAlpha(TString run_name = "Am_alpha_001"){
     //fetch hist
     TH1D *hist = convertWaveFormToHist(run_name);
     // init const
@@ -32,5 +32,5 @@ TH1D* fitAmAlpha(TString run_name = "Am_alpha_001"){
     hist->SetStats(1);
     gStyle->SetOptFit(10100);
 
-    return hist;
+    return c1;
 }
