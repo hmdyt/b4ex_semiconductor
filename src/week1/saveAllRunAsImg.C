@@ -1,4 +1,4 @@
-void saveAllPlaneHist(use_cache = false){
+void saveAllPlaneHist(bool use_cache = false){
     vector<TString> sources = {"Am", "Cs", "Bg"};
     const TString DATA_PATH_WEEK1 = "/data/hamada/semiconductor/week1/";
 
@@ -35,7 +35,7 @@ void saveAllPlaneHist(use_cache = false){
     }
 }
 
-void saveCalibratedHist(){
+void saveCalibratedHist(bool use_cache = true){
     vector<TString> run_names_low_gain = {"Am_007", "Cs_006"};
     for (Int_t i = 0; i < run_names_low_gain.size(); i++){
         TCanvas* c = new TCanvas();
