@@ -1,7 +1,7 @@
 TH1D* makeHighGainCalibratedHist(TString run_name = "Am_007", bool use_cache = true){
     // init hist
     Double_t RANGE_MIN = 0;
-    Double_t RANGE_MAX = 100;
+    Double_t RANGE_MAX = 40;
     Double_t BIN_NUM = 1024;
     TH1D* hist = new TH1D(run_name + "_calibrated", run_name + "_calibrated;Energy [keV];Event", BIN_NUM, RANGE_MIN, RANGE_MAX);
 
@@ -28,7 +28,7 @@ TH1D* makeHighGainCalibratedHist(TString run_name = "Am_007", bool use_cache = t
         hist->Fill(f_clb(
             a,
             b,
-            determineWaveHeight(waveforms[i], 0, 400)
+            determineWaveHeight(waveforms[i], 1024, 0, 400)
         ));
         if (i % 1000 == 0 && i != 0){ cout << i << endl; }
     }

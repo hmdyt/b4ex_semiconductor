@@ -28,7 +28,7 @@ TH1D* makeLowGainCalibratedHist(TString run_name = "Am_007", bool use_cache = tr
         hist->Fill(f_clb(
             a,
             b,
-            determineWaveHeight(waveforms[i], 0, 400)
+            determineWaveHeight(waveforms[i], 1024, 0, 400)
         ));
         if (i % 1000 == 0 && i != 0){ cout << i << endl; }
     }

@@ -46,7 +46,7 @@ void saveCalibratedHist(bool use_cache = false){
     }
 
     // high gain
-    vector<TString> run_names_high_gain = {"A,_009", "Cs_015"};
+    vector<TString> run_names_high_gain = {"Am_009", "Cs_015"};
     for (Int_t i = 0; i < run_names_high_gain.size(); i++){
         TCanvas* c = new TCanvas();
         makeHighGainCalibratedHist(run_names_high_gain[i], use_cache)->Draw();
