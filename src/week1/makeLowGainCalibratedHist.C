@@ -12,7 +12,7 @@ TH1D* makeLowGainCalibratedHist(TString run_name = "Am_007", bool use_cache = tr
     }
 
     // fetch calibration constant
-    pair<Double_t, Double_t> tmp_pair = drawLowGainCalibration();
+    pair<Double_t, Double_t> tmp_pair = drawLowGainCalibration(true);
     Double_t a = tmp_pair.first;
     Double_t b = tmp_pair.second;
     auto f_clb = [](Double_t a, Double_t b, Double_t x){
