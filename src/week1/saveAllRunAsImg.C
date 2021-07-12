@@ -39,8 +39,7 @@ void saveCalibratedHist(bool use_cache = false){
     // low gain
     vector<TString> run_names_low_gain = {"Am_007", "Cs_006"};
     for (Int_t i = 0; i < run_names_low_gain.size(); i++){
-        TCanvas* c = new TCanvas();
-        makeLowGainCalibratedHist(run_names_low_gain[i], use_cache)->Draw();
+        TCanvas* c = makeLowGainCalibratedHist(run_names_low_gain[i], use_cache);
         c->SaveAs("img/week1/calibrated_hist_low_gain/" + run_names_low_gain[i] + ".svg");
         c->SaveAs("img/week1/calibrated_hist_low_gain/" + run_names_low_gain[i] + ".pdf");
     }
@@ -48,8 +47,7 @@ void saveCalibratedHist(bool use_cache = false){
     // high gain
     vector<TString> run_names_high_gain = {"Am_009", "Cs_015"};
     for (Int_t i = 0; i < run_names_high_gain.size(); i++){
-        TCanvas* c = new TCanvas();
-        makeHighGainCalibratedHist(run_names_high_gain[i], use_cache)->Draw();
+        TCanvas* c = makeHighGainCalibratedHist(run_names_high_gain[i], use_cache);
         c->SaveAs("img/week1/calibrated_hist_high_gain/" + run_names_high_gain[i] + ".svg");
         c->SaveAs("img/week1/calibrated_hist_high_gain/" + run_names_high_gain[i] + ".pdf");
     }

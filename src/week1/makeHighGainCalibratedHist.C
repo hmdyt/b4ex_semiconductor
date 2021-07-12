@@ -1,4 +1,4 @@
-TH1D* makeHighGainCalibratedHist(TString run_name = "Am_007", bool use_cache = true){
+TCanvas* makeHighGainCalibratedHist(TString run_name = "Am_007", bool use_cache = true){
     // init hist
     Double_t RANGE_MIN = 0;
     Double_t RANGE_MAX = 40;
@@ -8,7 +8,9 @@ TH1D* makeHighGainCalibratedHist(TString run_name = "Am_007", bool use_cache = t
     // if the macro find a correct cache, return it
     const TString CACHE_PATH = "/data/hamada/semiconductor/week1/" + run_name + "_calibrated.root";
     if (use_cache && checkFileExistence(CACHE_PATH)){
-        return (TH1D*)TFile::Open(CACHE_PATH)->Get(run_name + "_calibrated");
+        TCanvas* c = new TCanvas();
+        ((TH1D*)TFile::Open(CACHE_PATH)->Get(run_name + "_calibrated"))->Draw();
+        return c;
     }
 
     // fetch calibration constant
@@ -38,5 +40,7 @@ TH1D* makeHighGainCalibratedHist(TString run_name = "Am_007", bool use_cache = t
     hist->Write();
     cache_file->Close();
 
-    return hist;
+    TCanvas* c = new TCanvas();
+    hist->Draw();
+    return c;
 }
