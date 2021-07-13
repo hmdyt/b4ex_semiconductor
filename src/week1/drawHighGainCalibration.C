@@ -17,6 +17,8 @@ pair<Double_t, Double_t> drawHighGainCalibration(bool is_show_origin = true){
 	// x = measured, y = theoretical
 	TGraphErrors* g = new TGraphErrors();
 	g->SetTitle("High gain calibration;Energy [keV];ADC Value");
+    g->SetMarkerStyle(8);
+	g->SetMarkerSize(1);
 
     // init TH2D for axis
 	TH2D* axis = new TH2D("axis", "High gain calibration;Energy [keV];ADC Value", 0, 0, 70, 0, 0, 2000);
@@ -52,7 +54,6 @@ pair<Double_t, Double_t> drawHighGainCalibration(bool is_show_origin = true){
 	} else {
 		g->Draw("AP");
 	}
-    g->SetMarkerStyle(22);
     c->Draw();
 	c->SaveAs("img/week1/high_gain_clb/final.svg");
 	c->SaveAs("img/week1/high_gain_clb/final.pdf");

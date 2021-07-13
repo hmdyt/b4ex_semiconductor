@@ -23,24 +23,20 @@ pair<Double_t, Double_t> drawLowGainCalibration(bool is_show_origin = false){
 	// x = measured, y = theoretical
 	TGraphErrors* g1 = new TGraphErrors();
 	g1->SetTitle(title + ";Energy [keV];ADC Value");
+	g1->SetMarkerStyle(8);
+	g1->SetMarkerSize(1);
 
 	// init TH2D for axis
 	TH2D* axis = new TH2D("axis", title + ";Energy [keV]; ADC Value", 0, 0, 70, 0, 0, 2000);
 	axis->SetStats(0);
 
 	// set Am points
-	Double_t x, y, x_error, y_error;
-	for (Int_t i = 0; i < theore_Am_energy.size(); i++){
-		if (i == 1){ continue; } // pass unknown peak
-		// prepare points
-		x = theore_Am_energy[i];
-		x_error = 0;
-		y = fit_Am_mean[i].first;
-		y_error = fit_Am_mean[i].second;
-		// set point
-		g1->SetPoint(i, x, y);
-		g1->SetPointError(i, x_error, y_error);
-	}
+	g1->SetPoint(0, theore_Am_energy[0], fit_Am_mean[0].first);
+	g1->SetPoint(1, theore_Am_energy[2], fit_Am_mean[2].first);
+	g1->SetPoint(2, theore_Am_energy[3], fit_Am_mean[3].first);
+	g1->SetPointError(0, 0, fit_Am_mean[0].second);
+	g1->SetPointError(1, 0, fit_Am_mean[2].second);
+	g1->SetPointError(2, 0, fit_Am_mean[3].second);
 
 	// set Cs points
 	g1->SetPoint(3, theore_Cs_energy, fit_Cs_mean[0].first);
@@ -51,7 +47,7 @@ pair<Double_t, Double_t> drawLowGainCalibration(bool is_show_origin = false){
 
 	// init TF1 and fit
 	TF1* func = new TF1("func", "[0] * x + [1]", 0, 70);
-	func->SetParameters(y/x, 0);
+	func->SetParameters(fit_Am_mean[0].first/theore_Am_energy[0], 0);
 	g1->Fit(func, "R");
 
 	// draw
