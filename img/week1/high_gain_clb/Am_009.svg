@@ -5,10 +5,12 @@ img/week1/high_gain_clb/Am_009.svg
 </title>
 <desc>
 Creator: ROOT Version 6.22/09
-CreationDate: Tue Jul 13 11:02:28 2021</desc>
+CreationDate: Tue Jul 13 11:42:09 2021</desc>
 <defs>
 </defs>
 <rect x="0.5" y="0" width="566.929" height="384.469" fill="white"/>
+<rect x="57.1929" y="38.4469" width="453.543" height="307.575" fill="white"/>
+<rect x="57.1929" y="38.4469" width="453.543" height="307.575" fill="none" stroke="black"/>
 <rect x="57.1929" y="38.4469" width="453.543" height="307.575" fill="white"/>
 <rect x="57.1929" y="38.4469" width="453.543" height="307.575" fill="none" stroke="black"/>
 <path d="M57.1929,346.022h 66.155v -0.294598h 0.636106v -2.25859h 0.636106v -11.1947h 0.636106v 1.17839h 0.636106v 0.981994h 0.636106v 0.883795h 0.636106v -3.33878h 0.636106v -1.17839h 0.636106v 4.12438h 0.636106v -0.589197h 0.636106v -1.17839h
@@ -58,6 +60,19 @@ CreationDate: Tue Jul 13 11:02:28 2021</desc>
  -0.0981994h 0.636106v 0.294598h 0.636106v -0.0981994h 0.636106v -0.589197h 0.636106v 0.490997h 0.636106v 0.196399h 1.27221v -0.785595h 1.27221v 0.981994h 0.636106v -1.37479h 0.636106v -9.32895h 0.636106v -82.1929h 0.636106v -199.639h 0.636106v
  49.7871h 0.636106v 43.1095h 0.636106v 31.522h 0.636106v 57.3485h 0.636106v 25.3355h 0.636106v 9.32895h 0.636106v -13.0605h 0.636106v -2.84778h 0.636106v 11.9803h 0.636106v 8.93615h 0.636106v -5.20457h 0.636106v 23.4697h 0.636106v 37.3158h 0.636106v
  12.9623h 0.636106v 2.16039h 0.636106v 0.0981994h 0.636106v 0.490997h 0.636106v -0.196399h 0.636106v -0.0981994h 0.636106v 0.490997h 1.90832v -0.0981994h 0.636106v 0.0981994h 6.36106v -0.0981994h 0.636106" fill="none" stroke="#000099"/>
+<rect x="442.705" y="24.9905" width="113.386" height="61.5151" fill="white"/>
+<path d="M442.705,86.5056h 113.386" fill="none" stroke="black"/>
+<path d="M556.091,86.5056v -61.5151" fill="none" stroke="black"/>
+<path d="M556.091,24.9905h -113.386" fill="none" stroke="black"/>
+<path d="M442.705,24.9905v 61.5151" fill="none" stroke="black"/>
+<text xml:space="preserve" x="474.57" y="36.6549" fill="black" font-size="13.4802" font-family="Helvetica">Am_009</text>
+<path d="M442.705,40.3693h 113.386" fill="none" stroke="black"/>
+<text xml:space="preserve" x="447.69" y="52.946" fill="black" font-size="12.3904" font-family="Helvetica">Entries </text>
+<text xml:space="preserve" x="506.338" y="52.946" fill="black" font-size="12.3904" font-family="Helvetica"> 116742</text>
+<text xml:space="preserve" x="447.69" y="67.6079" fill="black" font-size="12.3904" font-family="Helvetica">Mean  </text>
+<text xml:space="preserve" x="512.854" y="67.6079" fill="black" font-size="12.3904" font-family="Helvetica">   1133</text>
+<text xml:space="preserve" x="447.69" y="83.0844" fill="black" font-size="12.3904" font-family="Helvetica">Std Dev   </text>
+<text xml:space="preserve" x="512.854" y="83.0844" fill="black" font-size="12.3904" font-family="Helvetica">  467.5</text>
 <path d="M57.1929,346.022h 453.543" fill="none" stroke="black"/>
 <path d="M57.829,336.795v 9.22726" fill="none" stroke="black"/>
 <path d="M79.0325,341.409v 4.61363" fill="none" stroke="black"/>
@@ -133,7 +148,6 @@ CreationDate: Tue Jul 13 11:02:28 2021</desc>
 <g transform="rotate(-90,14.3474,70.0516)">
 <text xml:space="preserve" x="14.3474" y="70.0516" fill="black" font-size="12.8453" font-family="Helvetica">Event</text>
 </g>
-<text xml:space="preserve" x="250.568" y="18.7347" fill="black" font-size="18.0316" font-family="Helvetica">Am_009</text>
 <rect x="442.705" y="24.9905" width="113.386" height="61.5151" fill="white"/>
 <path d="M442.705,86.5056h 113.386" fill="none" stroke="black"/>
 <path d="M556.091,86.5056v -61.5151" fill="none" stroke="black"/>
