@@ -8,6 +8,10 @@
 ![img/week1/high_gain_clb/Cs_015.svg](https://github.com/hmdyt/b4ex_semiconductor/blob/main/img/week1/high_gain_clb/Cs_015.svg)
 ### img/week1/high_gain_clb/final.svg
 ![img/week1/high_gain_clb/final.svg](https://github.com/hmdyt/b4ex_semiconductor/blob/main/img/week1/high_gain_clb/final.svg)
+### img/week1/high_gain_clb/Am_009_withpara.svg
+![img/week1/high_gain_clb/Am_009_withpara.svg](https://github.com/hmdyt/b4ex_semiconductor/blob/main/img/week1/high_gain_clb/Am_009_withpara.svg)
+### img/week1/high_gain_clb/Cs_015_withpara.svg
+![img/week1/high_gain_clb/Cs_015_withpara.svg](https://github.com/hmdyt/b4ex_semiconductor/blob/main/img/week1/high_gain_clb/Cs_015_withpara.svg)
 ### img/week1/low_gain_clb/Am_007.svg
 ![img/week1/low_gain_clb/Am_007.svg](https://github.com/hmdyt/b4ex_semiconductor/blob/main/img/week1/low_gain_clb/Am_007.svg)
 ### img/week1/low_gain_clb/Cs_006.svg
