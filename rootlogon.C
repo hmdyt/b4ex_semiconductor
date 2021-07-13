@@ -34,6 +34,7 @@ void rootlogon(){
     loadMacro("src/week1/makeLowGainCalibratedHist.C");
     loadMacro("src/week1/makeHighGainCalibratedHist.C");
     loadMacro("src/week1/fitLowGainCalibratedAm.C");
+    loadMacro("src/week1/fitHighGainCalibratedAm.C");
     loadMacro("src/week1/standardizedByTime.C");
     loadMacro("src/week1/overWriteHistOfAmAlpha.C");
     loadMacro("src/week1/saveAllRunAsImg.C");
