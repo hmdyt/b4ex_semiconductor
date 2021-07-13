@@ -1,6 +1,6 @@
 pair<Double_t, Double_t> drawLowGainCalibration(bool is_show_origin = false){
 	// init Am theoretical energy
-	vector<Double_t> theore_Am_energy = {18, 0, 26, 59};
+	vector<Double_t> theore_Am_energy = {17.6, 0, 26.3, 59.5};
 
 	// init Cs theoretical enrgy
 	Double_t theore_Cs_energy = 32.9;
