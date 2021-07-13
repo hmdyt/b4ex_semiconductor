@@ -17,6 +17,7 @@ void rootlogon(){
     cout << "executed rootlogon" << endl;
 
     // week1
+    loadMacro("src/week1/coutTF1.C");
     loadMacro("src/week1/checkFileExistence.C");
     loadMacro("src/week1/saveAsFitParameters.C");
     loadMacro("src/week1/constructWaveFormsVector.C");
