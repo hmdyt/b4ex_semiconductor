@@ -57,6 +57,7 @@ pair<Double_t, Double_t> drawLowGainCalibration(bool is_show_origin = false){
 	} else {
 		g1->Draw("AP");
 	}
+	func->Draw("SAME");
 	c1->Draw();
 	c1->SaveAs("img/week1/low_gain_clb/final.svg");
 	c1->SaveAs("img/week1/low_gain_clb/final.pdf");
