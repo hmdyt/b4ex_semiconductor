@@ -1,4 +1,4 @@
-TH1D* makeLowGainCalibratedHist(TString run_name = "Am_007", bool use_cache = true){
+TCanvas* makeLowGainCalibratedHist(TString run_name = "Am_007", bool use_cache = true){
     // init hist
     Double_t RANGE_MIN = 0;
     Double_t RANGE_MAX = 100;
@@ -8,11 +8,13 @@ TH1D* makeLowGainCalibratedHist(TString run_name = "Am_007", bool use_cache = tr
     // if the macro find a correct cache, return it
     const TString CACHE_PATH = "/data/hamada/semiconductor/week1/" + run_name + "_calibrated.root";
     if (use_cache && checkFileExistence(CACHE_PATH)){
-        return (TH1D*)TFile::Open(CACHE_PATH)->Get(run_name + "_calibrated");
+        TCanvas* c = new TCanvas();
+        ((TH1D*)TFile::Open(CACHE_PATH)->Get(run_name + "_calibrated"))->Draw();
+        return c;
     }
 
     // fetch calibration constant
-    pair<Double_t, Double_t> tmp_pair = drawLowGainCalibration();
+    pair<Double_t, Double_t> tmp_pair = drawLowGainCalibration(true);
     Double_t a = tmp_pair.first;
     Double_t b = tmp_pair.second;
     auto f_clb = [](Double_t a, Double_t b, Double_t x){
@@ -28,7 +30,7 @@ TH1D* makeLowGainCalibratedHist(TString run_name = "Am_007", bool use_cache = tr
         hist->Fill(f_clb(
             a,
             b,
-            determineWaveHeight(waveforms[i], 0, 400)
+            determineWaveHeight(waveforms[i], 1024, 0, 400)
         ));
         if (i % 1000 == 0 && i != 0){ cout << i << endl; }
     }
@@ -38,5 +40,7 @@ TH1D* makeLowGainCalibratedHist(TString run_name = "Am_007", bool use_cache = tr
     hist->Write();
     cache_file->Close();
 
-    return hist;
+    TCanvas* c = new TCanvas();
+    hist->Draw();
+    return c;
 }

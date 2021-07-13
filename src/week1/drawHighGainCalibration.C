@@ -1,6 +1,6 @@
 pair<Double_t, Double_t> drawHighGainCalibration(bool is_show_origin = true){
     // init Am, Cs theoretical energy
-    vector<Double_t> theore_Am_energy = {13.9, 26};
+    vector<Double_t> theore_Am_energy = {17.6, 21.1, 26.3};
     vector<Double_t> theore_Cs_energy = {32.9};
     vector<Double_t> theore_energy;
     theore_energy.insert(theore_energy.end(), theore_Am_energy.begin(), theore_Am_energy.end());
@@ -17,9 +17,11 @@ pair<Double_t, Double_t> drawHighGainCalibration(bool is_show_origin = true){
 	// x = measured, y = theoretical
 	TGraphErrors* g = new TGraphErrors();
 	g->SetTitle("High gain calibration;Energy [keV];ADC Value");
+    g->SetMarkerStyle(8);
+	g->SetMarkerSize(1);
 
     // init TH2D for axis
-	TH2D* axis = new TH2D("axis", "High gain calibration;Energy [keV];ADC Value", 0, 0, 70, 0, 0, 2000);
+	TH2D* axis = new TH2D("axis", "High gain calibration;Energy [keV];ADC Value", 0, 0, 50, 0, 0, 2000);
 	axis->SetStats(0);
 
 
@@ -52,7 +54,6 @@ pair<Double_t, Double_t> drawHighGainCalibration(bool is_show_origin = true){
 	} else {
 		g->Draw("AP");
 	}
-    g->SetMarkerStyle(22);
     c->Draw();
 	c->SaveAs("img/week1/high_gain_clb/final.svg");
 	c->SaveAs("img/week1/high_gain_clb/final.pdf");

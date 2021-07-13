@@ -23,7 +23,7 @@ TH1D* convertWaveFormToHist(TString run_name = "Cs_002", bool use_cache = true, 
     // fill into hist
     cout << "start filling" << endl;
     for (Int_t i = 0; i < waveforms.size(); i++){
-        hist->Fill(determineWaveHeight(waveforms[i], 0, 400));
+        hist->Fill(determineWaveHeight(waveforms[i], is_alpha_ray ? 10240 : 1024, 0, 400));
         if (i % 1000 == 0 && i != 0){ cout << i << endl; }
     }
 

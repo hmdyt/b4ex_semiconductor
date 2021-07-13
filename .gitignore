@@ -36,7 +36,7 @@
 .vscode
 *.svg
 *.pdf
-wiki
+img
 
 # tomoe
 *.swp

@@ -1,5 +1,5 @@
-void saveAllPlaneHist(){
-    vector<TString> sources = {"Am", "Cs", "Bg", "Am_alpha"};
+void saveAllPlaneHist(bool use_cache = false){
+    vector<TString> sources = {"Am", "Cs", "Bg"};
     const TString DATA_PATH_WEEK1 = "/data/hamada/semiconductor/week1/";
 
     // week1
@@ -21,7 +21,7 @@ void saveAllPlaneHist(){
             cout << run_name << endl;
             // save
             TCanvas* c = new TCanvas();
-            convertWaveFormToHist(run_name)->Draw();
+            convertWaveFormToHist(run_name, use_cache)->Draw();
             c->SaveAs("img/week1/plane_hist/" + run_name + ".svg");
             c->SaveAs("img/week1/plane_hist/" + run_name + ".pdf");
             // increment
@@ -33,15 +33,28 @@ void saveAllPlaneHist(){
             run_num_week1_padded << std::setw(3) << std::setfill('0') << run_num_week1;
         }
     }
+    // for Bg_015
+    TCanvas* c = new TCanvas();
+            convertWaveFormToHist("Bg_015", use_cache)->Draw();
+            c->SaveAs("img/week1/plane_hist/Bg_015.svg");
+            c->SaveAs("img/week1/plane_hist/Bg_015.pdf");
 }
 
-void saveCalibratedHist(){
+void saveCalibratedHist(bool use_cache = false){
+    // low gain
     vector<TString> run_names_low_gain = {"Am_007", "Cs_006"};
     for (Int_t i = 0; i < run_names_low_gain.size(); i++){
-        TCanvas* c = new TCanvas();
-        makeLowGainCalibratedHist(run_names_low_gain[i], true)->Draw();
+        TCanvas* c = makeLowGainCalibratedHist(run_names_low_gain[i], use_cache);
         c->SaveAs("img/week1/calibrated_hist_low_gain/" + run_names_low_gain[i] + ".svg");
         c->SaveAs("img/week1/calibrated_hist_low_gain/" + run_names_low_gain[i] + ".pdf");
+    }
+
+    // high gain
+    vector<TString> run_names_high_gain = {"Am_009", "Cs_015"};
+    for (Int_t i = 0; i < run_names_high_gain.size(); i++){
+        TCanvas* c = makeHighGainCalibratedHist(run_names_high_gain[i], use_cache);
+        c->SaveAs("img/week1/calibrated_hist_high_gain/" + run_names_high_gain[i] + ".svg");
+        c->SaveAs("img/week1/calibrated_hist_high_gain/" + run_names_high_gain[i] + ".pdf");
     }
 }
 
@@ -84,9 +97,21 @@ void saveAmAlphaHist(){
     c4->SaveAs("img/week2/overWriteHistOfAmAlpha.pdf");
 }
 
-void saveAllRunAsImg(){
-    saveAllPlaneHist();
-    saveCalibratedHist();
+void saveStandardizedByTime(){
+    TCanvas* c1 = new TCanvas();
+    standardizedByTime("Bg_015")->Draw();
+    c1->SaveAs("img/week1/standardizedHistByTime_OfBg.svg");
+    c1->SaveAs("img/week1/standardizedHistByTime_OfBg.pdf");
+
+    TCanvas* c2 = new TCanvas();
+    standardizedByTime("Cs_015")->Draw();
+    c2->SaveAs("img/week1/standardizedHistByTime_OfCs.svg");
+    c2->SaveAs("img/week1/standardizedHistByTime_OfCs.pdf");
+}
+
+void saveAllRunAsImg(bool use_cache = false){
+    saveAllPlaneHist(use_cache);
+    saveCalibratedHist(use_cache);
     saveAmAlphaHist();
     saveStandardizedHist();
 }

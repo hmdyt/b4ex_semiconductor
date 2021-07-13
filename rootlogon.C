@@ -18,6 +18,7 @@ void rootlogon(){
 
     // week1
     loadMacro("src/week1/checkFileExistence.C");
+    loadMacro("src/week1/saveAsFitParameters.C");
     loadMacro("src/week1/constructWaveFormsVector.C");
     loadMacro("src/week1/determineWaveHeight.C");
     loadMacro("src/week1/combineSubRuns.C");
@@ -31,6 +32,8 @@ void rootlogon(){
     loadMacro("src/week1/drawHighGainCalibration.C");
     loadMacro("src/week1/fitAmAlpha.C");
     loadMacro("src/week1/makeLowGainCalibratedHist.C");
+    loadMacro("src/week1/makeHighGainCalibratedHist.C");
+    loadMacro("src/week1/fitLowGainCalibratedAm.C");
     loadMacro("src/week1/standardizedByTime.C");
     loadMacro("src/week1/overWriteHistOfAmAlpha.C");
     loadMacro("src/week1/saveAllRunAsImg.C");
