@@ -71,8 +71,7 @@ void saveStandardizedHist(){
 
 }
 void saveHighGainCalibratedHistOfBg(){
-    TCanvas* c1 = new TCanvas();
-    makeHighGainCalibratedHist("Bg_015")->Draw();
+    TCanvas* c1 = makeHighGainCalibratedHist("Bg_015");
     c1->SaveAs("img/week1/calibrated_hist_high_gain/Bg.svg");
     c1->SaveAs("img/week1/calibrated_hist_high_gain/Bg.pdf");
 }
