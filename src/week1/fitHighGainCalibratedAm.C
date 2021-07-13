@@ -67,5 +67,6 @@ void fitHighGainCalibratedAm(){
     func2->Draw("SAME");
     func3->Draw("SAME");
 
-    c->SaveAs("img/week1/calibrated_hist_high_gain/Am_009_calibrated_fit_gaus");
+    c->SaveAs("img/week1/calibrated_hist_high_gain/Am_009_calibrated_fit_gaus.svg");
+    c->SaveAs("img/week1/calibrated_hist_high_gain/Am_009_calibrated_fit_gaus.pdf");
 }
