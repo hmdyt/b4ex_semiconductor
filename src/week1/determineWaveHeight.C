@@ -38,6 +38,8 @@ Double_t determineWaveHeight(
     c->Draw();
     */
     // return 
+    delete fit_target;
+    delete pol0;
     return max_waveform - ground;
 }
 
