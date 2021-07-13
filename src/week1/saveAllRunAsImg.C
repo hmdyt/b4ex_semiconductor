@@ -44,6 +44,19 @@ void saveCalibratedHist(){
         c->SaveAs("img/week1/calibrated_hist_low_gain/" + run_names_low_gain[i] + ".pdf");
     }
 }
+
+void saveStandardizedHist(){
+    TCanvas* c1 = new TCanvas();
+    standardizedByTime("Bg_015")->Draw();
+    c1->SaveAs("img/week1/standardizedByTime/Bg_015.svg");
+    c1->SaveAs("img/week1/standardizedByTime/Bg_015.pdf");
+
+    TCanvas* c2 = new TCanvas();
+    standardizedByTime("Cs_015")->Draw();
+    c2->SaveAs("img/week1/standardizedByTime/Cs_015.svg");
+    c2->SaveAs("img/week1/standardizedByTime/Cs_015.pdf");
+
+}
 //week2
 void saveAmAlphaHist(){
     vector<TString> run_name_Am_alpha = {"Am_alpha_001", "Am_alpha_002"};
@@ -60,7 +73,7 @@ void saveAmAlphaHist(){
         c2->SaveAs("img/week2/fit" + run_name + "Hist.pdf");
 
         TCanvas* c3 = new TCanvas();
-        standardizedByTimeAm(run_name)->Draw();
+        standardizedByTime(run_name)->Draw();
         c3->SaveAs("img/week2/standardizedByTime" + run_name + "Hist.svg");
         c3->SaveAs("img/week2/standardizedByTime" + run_name + "Hist.pdf");
 
@@ -75,4 +88,5 @@ void saveAllRunAsImg(){
     saveAllPlaneHist();
     saveCalibratedHist();
     saveAmAlphaHist();
+    saveStandardizedHist();
 }

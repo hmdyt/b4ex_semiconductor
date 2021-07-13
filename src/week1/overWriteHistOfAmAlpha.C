@@ -1,7 +1,7 @@
 TCanvas* overWriteHistOfAmAlpha(){
     // fetch hist
-    TH1D *hist1 = standardizedByTimeAm("Am_alpha_001");
-    TH1D *hist2 = standardizedByTimeAm("Am_alpha_002");
+    TH1D *hist1 = standardizedByTime("Am_alpha_001");
+    TH1D *hist2 = standardizedByTime("Am_alpha_002");
 
     // TLegend
     TString Hist1_Title = hist1->GetTitle();
