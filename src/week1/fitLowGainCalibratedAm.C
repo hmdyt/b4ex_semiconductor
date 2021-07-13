@@ -49,5 +49,5 @@ void fitLowGainCalibratedAm(){
     f1->Draw("SAME");
     f2->Draw("SAME");
     f3->Draw("SAME");
-    saveAsFitParameters(c, "img/week1/calibrated_hist_high_gain/Am_007_calibrated_show_gaus");
+    saveAsFitParameters(c, "img/week1/calibrated_hist_low_gain/Am_007_calibrated_fit_gaus");
 }
