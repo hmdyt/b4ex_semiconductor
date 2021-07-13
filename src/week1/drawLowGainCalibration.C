@@ -1,6 +1,6 @@
 pair<Double_t, Double_t> drawLowGainCalibration(bool is_show_origin = false){
 	// init Am theoretical energy
-	vector<Double_t> theore_Am_energy = {17.6, 0, 26.3, 59.5};
+	vector<Double_t> theore_Am_energy = {17.4, 20.9, 26.3, 59.5};
 
 	// init Cs theoretical enrgy
 	Double_t theore_Cs_energy = 32.9;
@@ -31,16 +31,14 @@ pair<Double_t, Double_t> drawLowGainCalibration(bool is_show_origin = false){
 	axis->SetStats(0);
 
 	// set Am points
-	g1->SetPoint(0, theore_Am_energy[0], fit_Am_mean[0].first);
-	g1->SetPoint(1, theore_Am_energy[2], fit_Am_mean[2].first);
-	g1->SetPoint(2, theore_Am_energy[3], fit_Am_mean[3].first);
-	g1->SetPointError(0, 0, fit_Am_mean[0].second);
-	g1->SetPointError(1, 0, fit_Am_mean[2].second);
-	g1->SetPointError(2, 0, fit_Am_mean[3].second);
+	for (Int_t i = 0; i < theore_Am_energy.size(); i++){
+		g1->SetPoint(i, theore_Am_energy[i], fit_Am_mean[i].first);
+		g1->SetPointError(i, 0, fit_Am_mean[i].second);
+	}
 
 	// set Cs points
-	g1->SetPoint(3, theore_Cs_energy, fit_Cs_mean[0].first);
-	g1->SetPointError(3, 0, fit_Cs_mean[0].second);
+	g1->SetPoint(4, theore_Cs_energy, fit_Cs_mean[0].first);
+	g1->SetPointError(4, 0, fit_Cs_mean[0].second);
 
 	// init canvas
 	TCanvas* c1 = new TCanvas();

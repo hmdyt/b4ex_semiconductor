@@ -1,6 +1,6 @@
 pair<Double_t, Double_t> drawHighGainCalibration(bool is_show_origin = true){
     // init Am, Cs theoretical energy
-    vector<Double_t> theore_Am_energy = {17.6, 20.8, 26.3};
+    vector<Double_t> theore_Am_energy = {13.9, 17.4, 20.9, 26.3};
     vector<Double_t> theore_Cs_energy = {32.9};
     vector<Double_t> theore_energy;
     theore_energy.insert(theore_energy.end(), theore_Am_energy.begin(), theore_Am_energy.end());
