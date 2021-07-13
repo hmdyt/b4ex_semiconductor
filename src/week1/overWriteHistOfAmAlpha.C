@@ -1,7 +1,7 @@
 TCanvas* overWriteHistOfAmAlpha(){
     // fetch hist
-    TH1D *hist1 = standardizedByTimeAm("Am_alpha_001");
-    TH1D *hist2 = standardizedByTimeAm("Am_alpha_002");
+    TH1D *hist1 = standardizedByTime("Am_alpha_001");
+    TH1D *hist2 = standardizedByTime("Am_alpha_002");
 
     // TLegend
     TString Hist1_Title = hist1->GetTitle();
@@ -13,7 +13,6 @@ TCanvas* overWriteHistOfAmAlpha(){
     // set Title & set Line color
     hist1->SetTitle("Am_alpha; ADC Value; Entries / Time");
     hist1->SetLineColor(4);
-    hist1->SetStats(0);
 
     // set fitting range
     Double_t FIT_RANGE_MIN_1 = 16;
@@ -35,7 +34,11 @@ TCanvas* overWriteHistOfAmAlpha(){
 
     // draw
     TCanvas* c1 = new TCanvas();
+    hist1->SetStats(1);
+    gStyle->SetOptFit(10111);
     hist1->Draw();
+    hist2->SetStats(1);
+    gStyle->SetOptFit(10111);
     hist2->Draw("SAME");
     func1->Draw("SAME");
     func2->Draw("SAME");

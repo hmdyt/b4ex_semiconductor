@@ -68,7 +68,7 @@ void saveAmAlphaHist(){
         c2->SaveAs("img/week2/fit" + run_name + "Hist.pdf");
 
         TCanvas* c3 = new TCanvas();
-        standardizedByTimeAm(run_name)->Draw();
+        standardizedByTime(run_name)->Draw();
         c3->SaveAs("img/week2/standardizedByTime" + run_name + "Hist.svg");
         c3->SaveAs("img/week2/standardizedByTime" + run_name + "Hist.pdf");
 
@@ -79,8 +79,21 @@ void saveAmAlphaHist(){
     c4->SaveAs("img/week2/overWriteHistOfAmAlpha.pdf");
 }
 
+void saveStandardizedByTime(){
+    TCanvas* c1 = new TCanvas();
+    standardizedByTime("Bg_015")->Draw();
+    c1->SaveAs("img/week1/standardizedHistByTime_OfBg.svg");
+    c1->SaveAs("img/week1/standardizedHistByTime_OfBg.pdf");
+
+    TCanvas* c2 = new TCanvas();
+    standardizedByTime("Cs_015")->Draw();
+    c2->SaveAs("img/week1/standardizedHistByTime_OfCs.svg");
+    c2->SaveAs("img/week1/standardizedHistByTime_OfCs.pdf");
+}
+
 void saveAllRunAsImg(bool use_cache = false){
     saveAllPlaneHist(use_cache);
     saveCalibratedHist(use_cache);
     saveAmAlphaHist();
+    saveStandardizedByTime();
 }
