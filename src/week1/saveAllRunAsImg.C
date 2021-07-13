@@ -58,6 +58,19 @@ void saveCalibratedHist(bool use_cache = false){
     }
 }
 
+void saveStandardizedHist(){
+    TCanvas* c1 = new TCanvas();
+    standardizedByTime("Bg_015")->Draw();
+    c1->SaveAs("img/week1/standardizedByTime/Bg_015.svg");
+    c1->SaveAs("img/week1/standardizedByTime/Bg_015.pdf");
+
+    TCanvas* c2 = new TCanvas();
+    standardizedByTime("Cs_015")->Draw();
+    c2->SaveAs("img/week1/standardizedByTime/Cs_015.svg");
+    c2->SaveAs("img/week1/standardizedByTime/Cs_015.pdf");
+
+}
+//week2
 void saveAmAlphaHist(){
     vector<TString> run_name_Am_alpha = {"Am_alpha_001", "Am_alpha_002"};
     for (Int_t i = 0; i < run_name_Am_alpha.size(); i++){
@@ -100,5 +113,5 @@ void saveAllRunAsImg(bool use_cache = false){
     saveAllPlaneHist(use_cache);
     saveCalibratedHist(use_cache);
     saveAmAlphaHist();
-    saveStandardizedByTime();
+    saveStandardizedHist();
 }
