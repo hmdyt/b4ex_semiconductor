@@ -1,6 +1,6 @@
 pair<Double_t, Double_t> drawHighGainCalibration(bool is_show_origin = true){
     // init Am, Cs theoretical energy
-    vector<Double_t> theore_Am_energy = {17.6, 26.3};
+    vector<Double_t> theore_Am_energy = {17.6, 21.1, 26.3};
     vector<Double_t> theore_Cs_energy = {32.9};
     vector<Double_t> theore_energy;
     theore_energy.insert(theore_energy.end(), theore_Am_energy.begin(), theore_Am_energy.end());
@@ -21,7 +21,7 @@ pair<Double_t, Double_t> drawHighGainCalibration(bool is_show_origin = true){
 	g->SetMarkerSize(1);
 
     // init TH2D for axis
-	TH2D* axis = new TH2D("axis", "High gain calibration;Energy [keV];ADC Value", 0, 0, 70, 0, 0, 2000);
+	TH2D* axis = new TH2D("axis", "High gain calibration;Energy [keV];ADC Value", 0, 0, 50, 0, 0, 2000);
 	axis->SetStats(0);
 
 

@@ -53,6 +53,12 @@ vector<pair<Double_t, Double_t>> fitHighAm(){
     );
     res.push_back(
         make_pair(
+            func->GetParameter(4),
+            func->GetParError(4)
+        )
+    );
+    res.push_back(
+        make_pair(
             func->GetParameter(7),
             func->GetParError(7)
         )
