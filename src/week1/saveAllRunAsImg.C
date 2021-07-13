@@ -33,6 +33,11 @@ void saveAllPlaneHist(bool use_cache = false){
             run_num_week1_padded << std::setw(3) << std::setfill('0') << run_num_week1;
         }
     }
+    // for Bg_015
+    TCanvas* c = new TCanvas();
+            convertWaveFormToHist("Bg_015", use_cache)->Draw();
+            c->SaveAs("img/week1/plane_hist/Bg_015.svg");
+            c->SaveAs("img/week1/plane_hist/Bg_015.pdf");
 }
 
 void saveCalibratedHist(bool use_cache = false){
