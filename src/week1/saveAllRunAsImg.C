@@ -118,6 +118,8 @@ void saveAllRunAsImg(bool use_cache = false){
     saveAllPlaneHist(use_cache);
     saveCalibratedHist(use_cache);
     saveHighGainCalibratedHistOfBg();
+    fitLowGainCalibratedAm();
+    fitHighGainCalibratedAm();
     saveAmAlphaHist();
     saveStandardizedHist();
 }
