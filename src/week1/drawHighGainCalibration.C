@@ -58,6 +58,9 @@ pair<Double_t, Double_t> drawHighGainCalibration(bool is_show_origin = true){
 	c->SaveAs("img/week1/high_gain_clb/final.svg");
 	c->SaveAs("img/week1/high_gain_clb/final.pdf");
 
+    // cout
+    coutTF1(func);
+
     // return
 	// y = ax + b
 	Double_t a = func->GetParameter(0);

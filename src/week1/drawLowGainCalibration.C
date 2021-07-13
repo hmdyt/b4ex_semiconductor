@@ -48,7 +48,7 @@ pair<Double_t, Double_t> drawLowGainCalibration(bool is_show_origin = false){
 	// init TF1 and fit
 	TF1* func = new TF1("func", "[0] * x + [1]", 0, 70);
 	func->SetParameters(fit_Am_mean[0].first/theore_Am_energy[0], 0);
-	g1->Fit(func, "R");
+	g1->Fit(func, "RQ0");
 
 	// draw
 	if (is_show_origin){
@@ -60,6 +60,9 @@ pair<Double_t, Double_t> drawLowGainCalibration(bool is_show_origin = false){
 	c1->Draw();
 	c1->SaveAs("img/week1/low_gain_clb/final.svg");
 	c1->SaveAs("img/week1/low_gain_clb/final.pdf");
+
+	// cout
+	coutTF1(func);
 
 	// return
 	// y = ax + b

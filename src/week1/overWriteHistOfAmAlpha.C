@@ -21,8 +21,8 @@ TCanvas* overWriteHistOfAmAlpha(){
     Double_t FIT_RANGE_MAX_2 = 22;
 
     // init TF1
-    TF1 *func1 = new TF1("func", "gaus", FIT_RANGE_MIN_1, FIT_RANGE_MAX_1);
-    TF1 *func2 = new TF1("func", "gaus", FIT_RANGE_MIN_2, FIT_RANGE_MAX_2);
+    TF1 *func1 = new TF1("func1", "gaus", FIT_RANGE_MIN_1, FIT_RANGE_MAX_1);
+    TF1 *func2 = new TF1("func2", "gaus", FIT_RANGE_MIN_2, FIT_RANGE_MAX_2);
 
     // set parameters
     func1->SetParameters(0.005, 20, 2);
