@@ -40,8 +40,7 @@ vector<pair<Double_t, Double_t>> fitHighAm(){
     TCanvas* c = new TCanvas();
     hist->Draw();
     func->Draw("SAME");
-    c->SaveAs("img/week1/high_gain_clb/Am_009.svg");
-    c->SaveAs("img/week1/high_gain_clb/Am_009.pdf");
+    saveAsFitParameters(c, "img/week1/high_gain_clb/Am_009");
 
     // return 
     // res = {{mean, mean_error}, {mean, mean_error}, ...}
