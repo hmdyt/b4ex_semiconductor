@@ -53,6 +53,10 @@ vector<pair<Double_t, Double_t>> fitLowAm(){
 	func2->Draw("SAME");
 	saveAsFitParameters(c, "img/week1/low_gain_clb/Am_007");
 
+	// cout
+	coutTF1(func1);
+	coutTF1(func2);
+	
 	// return fit parameter
 	vector<pair<Double_t, Double_t>> res;
 	for (Int_t i = 0; i < 4; i++){
